@@ -8,7 +8,7 @@ class ProductList extends React.Component {
                                           title={item.title}
                                           description={item.description}
                                           url={item.url}
-                                          key={item.id} 
+                                          key={`product-${item.id}`}
                                           votes={item.votes}
                                           productImageUrl = {item.productImageUrl} 
                                           submitterAvatarUrl={item.submitterAvatarUrl}/>)}
