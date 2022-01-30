@@ -13,7 +13,7 @@ class ProductList extends React.Component {
   }
   render() {
     const { products } = this.state;
-    const handleVotesClick = productId => () => {
+    const handleVotesClick = productId => {
       this.setState({ products: products.map(product => product.id === productId ? Object.assign(product, { votes: product.votes + 1 }) : product)});
     }
     return (
@@ -43,7 +43,7 @@ class Product extends React.Component {
         </div>
         <div className='middle aligned content'>
           <div className='header'>
-            <a onClick={handleVotesClick(id)}><i className='large carot up icon'>{votes}</i></a>
+            <a onClick={() => handleVotesClick(id)}><i className='large carot up icon'>{votes}</i></a>
           </div>
           <div className='description'>
             <a href={url}>{title}</a>
