@@ -3,15 +3,15 @@ class ProductList extends React.Component {
     const { products } = Seed;
     return (
       <div className='ui unstackable items'>
-        { products && products.map((item, index) => <Product 
-                                          id={item.id}
-                                          title={item.title}
-                                          description={item.description}
-                                          url={item.url}
-                                          key={`product-${item.id}`}
-                                          votes={item.votes}
-                                          productImageUrl = {item.productImageUrl} 
-                                          submitterAvatarUrl={item.submitterAvatarUrl}/>)}
+        { products && products.map(({ id, description, title, url, votes, productImageUrl, submitterAvatarUrl }) => <Product 
+                                          id={id}
+                                          title={title}
+                                          description={description}
+                                          url={url}
+                                          key={`product-${id}`}
+                                          votes={votes}
+                                          productImageUrl = {productImageUrl} 
+                                          submitterAvatarUrl={submitterAvatarUrl}/>)}
       </div>
     )
   }
