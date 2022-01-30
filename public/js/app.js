@@ -1,10 +1,8 @@
 class ProductList extends React.Component {
-  constructor() {
-   super();
-   this.state = {
+  
+   state = {
      products: []
    }
-  }
 
   componentDidMount() {
     this.setState({
