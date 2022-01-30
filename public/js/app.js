@@ -3,7 +3,7 @@ class ProductList extends React.Component {
     const { products } = Seed;
     return (
       <div className='ui unstackable items'>
-        { products && products.map(({ id, description, title, url, votes, productImageUrl, submitterAvatarUrl }) => <Product 
+        { products && products.sort((e1, e2) => e1.votes - e2.votes).map(({ id, description, title, url, votes, productImageUrl, submitterAvatarUrl }) => <Product 
                                           id={id}
                                           title={title}
                                           description={description}
